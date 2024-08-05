@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div id="wrapper">
+        <span id="hours">00</span>
+        <span>:</span>
+        <span id="minutes">00</span>
+        <span>:</span>
+        <span id="seconds">00</span>
+        <span id="ampm">AM</span>
+        </div>
+    </div>
+
+    <script>
+  let ampm = document.getElementById('ampm')
+    function displayTime(){
+
+        let dateTime = new Date();
+
+        let hr = dateTime.getHours();
+        let min = dateTime.getMinutes();
+        let sec = dateTime.getSeconds();
+        
+         if(hr>12){
+           hr = hr - 12
+           ampm.innerHTML = 'pm'
+          
+        }
+         else{
+           ampm.innerHTML = 'am'
+        }
+
+        document.getElementById('hours').innerHTML = hr;
+        document.getElementById('minutes').innerHTML = min;
+        document.getElementById('seconds').innerHTML = sec;
+        }
+   
+    setInterval(displayTime,100)
+        
+        </script>
+</body>
+</html>
